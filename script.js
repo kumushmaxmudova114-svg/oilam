@@ -1,9 +1,13 @@
 /* Ismlar va matnlarni shu yerda o'zgartiring */
 var FAMILY=[
+ {n:"Bobom",r:"Uyimizning kattasi",t:"Siz bilan har kunimiz barakalidir."},
+ {n:"Buvim",r:"Uyimizning parisi",t:"Sizning har so'zingizda mehr bor."}
  {n:"Dadam",r:"Oilamizning tayanchi",t:"Sizning mehnatingiz va sabringiz bizga doim o‘rnak."},
  {n:"Onam",r:"Uyimizning yuragi",t:"Sizning duoyingiz va mehringiz bilan hammamiz kuchlimiz."},
- {n:"Akam",r:"Ishonchli yelka",t:"Har doim maslahat va yordam uchun rahmat."},
- {n:"Singlim",r:"Uyimizning quvonchi",t:"Sizning kulgingiz uyimizni yoritadi."}
+ {n:"Katta ukam",r:"Ko'makchim",t:"Har doim yordaming uchun rahmat."},
+ {n:"Katta ukam",r:"Ikkinchi ko'makchim",t:"Doim quvnoq va xushchaqchaq bo'lgansan."},
+ {n:"Singlim",r:"Uyimizning quvonchi",t:"Sening kulginging uyimizni yoritadi."},
+ 
 ];
 var THANKS=[
  "Rahmat, mening yonimda bo‘lganingiz uchun.",
