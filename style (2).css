@@ -1,0 +1,58 @@
+:root{--bg:#eef6f5;--ink:#1f2a5a;--muted:#4d5a86;--card:#ffffff;--red:#b3263e;--gold:#e9a63b;--teal:#2a9d9f;--line:#c9dedd;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111a3a;--ink:#f3eedd;--muted:#a9b3d6;--card:#1b2652;--red:#e0566d;--gold:#f0b95a;--teal:#4cc0c2;--line:#2c3a70}}
+:root[data-theme="dark"]{--bg:#111a3a;--ink:#f3eedd;--muted:#a9b3d6;--card:#1b2652;--red:#e0566d;--gold:#f0b95a;--teal:#4cc0c2;--line:#2c3a70}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+/* cover */
+#cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px 20px;background:
+repeating-linear-gradient(45deg,transparent 0 22px,rgba(233,166,59,.14) 22px 24px),var(--bg)}
+#cover h1{font-size:clamp(2.4rem,9vw,4rem);max-width:12ch}
+#cover p{color:var(--muted);margin:14px 0 30px}
+.env{width:150px;height:104px;background:var(--red);border-radius:6px;position:relative;box-shadow:0 10px 0 -4px rgba(0,0,0,.12);margin-bottom:34px}
+.env:before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent 49.5%,rgba(0,0,0,.18) 50%) left/50% 100% no-repeat,linear-gradient(to bottom left,transparent 49.5%,rgba(0,0,0,.18) 50%) right/50% 100% no-repeat;border-radius:6px}
+.env:after{content:"❤";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--red);display:grid;place-items:center;font-size:18px}
+button{font:600 1rem Nunito,sans-serif;border:0;border-radius:999px;padding:14px 28px;background:var(--gold);color:#1f2a5a;cursor:pointer}
+button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+#site{display:none}
+#site.on{display:block;animation:rise .9s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#site.on{animation:none}}
+/* content */
+header{padding:64px 0 24px;border-bottom:4px double var(--gold)}
+header h1{font-size:clamp(2.2rem,8vw,3.4rem)}
+header p{color:var(--muted);font-size:1.1rem;margin:14px 0 0;max-width:34em}
+section{padding:44px 0 8px}
+h2{font-size:1.7rem;margin-bottom:18px}
+.members{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.m{background:var(--card);border-radius:14px;padding:20px;border-left:6px solid var(--teal)}
+.m:nth-child(even){border-left-color:var(--red)}
+.m:nth-child(3n){border-left-color:var(--gold)}
+.m b{font:700 1.25rem Fraunces,Georgia,serif;display:block}
+.m span{color:var(--muted);font-size:.9rem}
+.m p{margin:10px 0 0}
+.tradition{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.tradition i{font-style:normal;font-size:1.6rem;flex:none}
+.tradition p{margin:0}
+.thanks{background:var(--ink);color:var(--bg);border-radius:18px;padding:30px 22px;text-align:center;margin:44px 0}
+.thanks p{font:500 1.35rem/1.4 Fraunces,Georgia,serif;min-height:3.9em;margin:0 0 20px}
+footer{text-align:center;color:var(--muted);padding:20px 0 60px}
+
+.env{animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px) rotate(-2deg)}}
+#cover.go{animation:fade .7s .15s ease forwards}
+#cover.go .env{animation:pop .7s ease forwards}
+@keyframes pop{to{transform:scale(1.7) rotate(8deg);opacity:0}}
+@keyframes fade{to{opacity:0}}
+.piece{position:fixed;top:-20px;width:10px;height:14px;z-index:9;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(720deg)}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.heart{position:fixed;pointer-events:none;z-index:9;font-size:22px;animation:up 1.4s ease-out forwards}
+@keyframes up{to{transform:translate(var(--dx),-150px) scale(1.5);opacity:0}}
+footer span{display:inline-block;animation:beat 1.4s ease-in-out infinite}
+@keyframes beat{30%{transform:scale(1.35)}60%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
